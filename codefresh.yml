@@ -1,19 +1,36 @@
 version: '1.0'
 
 steps:
-  git_clone:
-    image: codefreshio/git-image:latest
-    working_directory: ${{main_clone}}
-    commands:
-      - bash -c 'rm -rf /codefresh/volume/cf-special-yml-example/'
-      - git clone https://github.com/codefresh-io/cf-special-yml-example.git /codefresh/volume/cf-special-yml-example
-      - bash -c 'cd /codefresh/volume/cf-special-yml-example/ && git checkout test && git branch && git status'
-      - ls -l /codefresh/volume/cf-special-yml-example
+#  git_clone_public_repo:
+#    image: codefreshio/git-image:latest
+#    working_directory: ${{main_clone}}
+#    commands:
+#      - bash -c 'rm -rf /codefresh/volume/cf-special-yml-example/'
+#      - git clone https://github.com/codefresh-io/cf-special-yml-example.git /codefresh/volume/cf-special-yml-example
+#      - bash -c 'cd /codefresh/volume/cf-special-yml-example/ && git checkout test && git branch && git status'
+#      - ls -l /codefresh/volume/cf-special-yml-example
+#
+#  build_public_prj:
+#    type: build
+#    description: Build an Image from a Different Git Repository
+#    working_directory: "/codefresh/volume/cf-special-yml-example"
+#    image_name: codefreshio/yaml-example-dif-git-repo
+#    dockerfile: Dockerfile
+#    tag: ${{CF_BRANCH}}
 
-  build_another_prj:
+  git_clone_private_repo:
+      image: codefreshio/git-image:latest
+      working_directory: ${{main_clone}}
+      commands:
+        - bash -c 'rm -rf /codefresh/volume/cf-private-special-yml-example/'
+        - git clone https://nCodefresh:intercoregithub2@github.com/codefresh-io/cf-private-special-yml-example.git /codefresh/volume/cf-private-special-yml-example
+        - bash -c 'cd /codefresh/volume/cf-private-special-yml-example/ && git branch && git status'
+        - ls -l /codefresh/volume/cf-private-special-yml-example
+
+  build_private_prj:
     type: build
     description: Build an Image from a Different Git Repository
-    working_directory: "/codefresh/volume/cf-special-yml-example"
+    working_directory: "/codefresh/volume/cf-private-special-yml-example"
     image_name: codefreshio/yaml-example-dif-git-repo
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
