@@ -1,23 +1,12 @@
 version: '1.0'
 
 steps:
-#  clone_repo:
-#    type: git-clone
-#    description: Clone another repository
-#    repo: https://github.com/codefresh-io/cf-special-yml-example.git
-#    revision: master
-
   git_clone:
     image: codefreshio/git-image:latest
     working_directory: ${{main_clone}}
     commands:
       - git clone https://github.com/codefresh-io/cf-special-yml-example.git /codefresh/volume/cf-special-yml-example
-      - echo folders
-      - ls -l
-      - echo go to folder
       - bash -c 'cd cf-special-yml-example/'
-      - ls -l
-      - echo checkout to branch
       - git checkout test
       - git branch
       - ls -l
