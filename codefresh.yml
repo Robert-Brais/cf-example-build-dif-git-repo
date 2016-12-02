@@ -11,6 +11,8 @@ steps:
     image: codefreshio/git-image:latest
     commands:
       - git clone https://github.com/codefresh-io/cf-special-yml-example.git
+      - echo folders
+      - ls -l
       - cd cf-special-yml-example/
       - git checkout test
       - git branch
