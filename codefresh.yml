@@ -23,7 +23,7 @@ steps:
       working_directory: ${{main_clone}}
       commands:
         - bash -c 'rm -rf /codefresh/volume/cf-private-special-yml-example/'
-        - git clone https://nCodefresh:intercoregithub2@github.com/codefresh-io/cf-private-special-yml-example.git /codefresh/volume/cf-private-special-yml-example
+        - git clone https://github.com/codefresh-io/cf-private-special-yml-example.git /codefresh/volume/cf-private-special-yml-example
         - bash -c 'cd /codefresh/volume/cf-private-special-yml-example/ && git branch && git status'
         - ls -l /codefresh/volume/cf-private-special-yml-example
 
