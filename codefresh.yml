@@ -15,6 +15,7 @@ steps:
       - ls -l
       - echo go to folder
       - bash -c "cd ./cf-special-yml-example/"
+      - ls -l
       - echo checkout to branch
       - git checkout test
       - git branch
