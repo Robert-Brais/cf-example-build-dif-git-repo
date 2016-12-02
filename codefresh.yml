@@ -13,7 +13,9 @@ steps:
       - git clone https://github.com/codefresh-io/cf-special-yml-example.git
       - echo folders
       - ls -l
-      - cd cf-special-yml-example/
+      - echo go to folder
+      - bash -c "cd ./cf-special-yml-example/"
+      - echo checkout to branch
       - git checkout test
       - git branch
       - ls -l
