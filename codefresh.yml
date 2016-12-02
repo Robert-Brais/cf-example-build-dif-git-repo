@@ -11,7 +11,7 @@ steps:
     image: codefreshio/git-image:latest
     working_directory: ${{main_clone}}
     commands:
-      - git clone https://github.com/codefresh-io/cf-special-yml-example.git
+      - git clone https://github.com/codefresh-io/cf-special-yml-example.git /codefresh/volume/
       - echo folders
       - ls -l
       - echo go to folder
