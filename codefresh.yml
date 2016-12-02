@@ -1,12 +1,20 @@
 version: '1.0'
 
 steps:
-  clone_repo:
-    type: git-clone
-    description: Clone another repository
-    repo: https://github.com/codefresh-io/cf-special-yml-example.git
-    revision: master
+#  clone_repo:
+#    type: git-clone
+#    description: Clone another repository
+#    repo: https://github.com/codefresh-io/cf-special-yml-example.git
+#    revision: master
 
+  git_clone:
+    image: codefreshio/git-image:latest
+    commands:
+      - git clone https://github.com/codefresh-io/cf-special-yml-example.git
+      - cd cf-special-yml-example/
+      - git checkout test
+      - git branch
+      - ls -l
 
   build_another_prj:
     type: build
