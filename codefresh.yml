@@ -7,11 +7,8 @@ steps:
     commands:
       - bash -c 'rm -rf /codefresh/volume/cf-special-yml-example/'
       - git clone https://github.com/codefresh-io/cf-special-yml-example.git /codefresh/volume/cf-special-yml-example
-      - bash -c 'cd /codefresh/volume/cf-special-yml-example/'
-      - git status
-      - git checkout test
-      - git branch
-      - ls -l
+      - bash -c 'cd /codefresh/volume/cf-special-yml-example/ && git checkout test && git branch && git status'
+      - ls -l /codefresh/volume/cf-special-yml-example
 
   build_another_prj:
     type: build
