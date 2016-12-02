@@ -5,9 +5,10 @@ steps:
     image: codefreshio/git-image:latest
     working_directory: ${{main_clone}}
     commands:
-      - bash -c 'rm -r /codefresh/volume/cf-special-yml-example/'
+      - bash -c 'rm -rf /codefresh/volume/cf-special-yml-example/'
       - git clone https://github.com/codefresh-io/cf-special-yml-example.git /codefresh/volume/cf-special-yml-example
       - bash -c 'cd cf-special-yml-example/'
+      = git status
       - git checkout test
       - git branch
       - ls -l
