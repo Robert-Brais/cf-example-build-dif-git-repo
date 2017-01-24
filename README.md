@@ -1,1 +1,3 @@
 # cf-example-build-dif-git-repo
+
+[![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=codefreshdemo&repoName=cf-example-build-dif-git-repo&branch=master&pipelineName=cf-example-build-dif-git-repo&accountName=nikolai&type=cf-1)]( https://g.codefresh.io/repositories/codefreshdemo/cf-example-build-dif-git-repo/builds?filter=trigger:build;branch:master;service:588773daee68e001005f148a~cf-example-build-dif-git-repo)
