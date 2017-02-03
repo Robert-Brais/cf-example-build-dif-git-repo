@@ -21,7 +21,7 @@ To use this example:
 * Complete the wizard.
 * Rejoice!
 
-### Git-clone step with github token
+## Git-clone step with github token
 
 #### How to generate the github token
 - Go to the page [Personal access tokens](https://github.com/settings/tokens)
