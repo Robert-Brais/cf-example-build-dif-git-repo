@@ -1,0 +1,7 @@
+version: '1.0'
+steps:
+  git-clone:
+    type: git-clone
+    description: "Step description"
+    repo: https://${{GIT_TOKEN}}@github.com/${{REPO_OWNER}}/${{REPO_NAME}}.git
+    revision: ${{BRANCH}}
