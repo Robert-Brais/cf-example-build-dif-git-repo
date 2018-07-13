@@ -4,6 +4,7 @@ steps:
       image: codefreshio/git-image:latest
       working_directory: ${{main_clone}}
       commands:
+        - bash -c 'echo codefresh repo name is ${{CF_REPO_NAME}}'
         - bash -c 'rm -rf /codefresh/volume/${{CF_REPO_NAME}}/'
         - git clone https://${{GIT_TOKEN}}@github.com/${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}.git /codefresh/volume/${{CF_REPO_NAME}}
         - bash -c 'cd /codefresh/volume/${{CF_REPO_NAME}}/ && git checkout ${{CF_BRANCH}} && git branch && git status'
