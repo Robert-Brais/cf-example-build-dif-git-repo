@@ -13,6 +13,6 @@ steps:
     type: build
     description: Build an Image from a Different Git Repository
     working_directory: /codefresh/volume/${{REPO_NAME}}
-    image_name: codefreshio/yaml-example-dif-git-repo
+    image_name: codefreshio/${{REPO_NAME}}
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
